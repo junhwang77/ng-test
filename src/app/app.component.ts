@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `<div style="text-align:left">
-                  <h2>n-Deep Tree</h2>
+                  <h2>n-Deep Tree (Click on the name to toggle view children)</h2>
                   <app-treenodes [data]="data" [key]="key"></app-treenodes>
               </div>`,
   styleUrls: ['./app.component.css']

@@ -1,0 +1,12 @@
+li {
+    display:block;
+    color: lawngreen;
+}
+
+.open-close-container {
+    overflow: hidden;
+}
+
+span {
+    cursor: pointer;
+}
