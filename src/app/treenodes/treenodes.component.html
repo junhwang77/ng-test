@@ -1,8 +1,0 @@
-<ul class="children" *ngIf="items.length">
-  <li *ngFor="let item of items" >
-    {{item.name}}
-    <input type="text">
-    <button></button>
-    <app-treenodes *ngIf="item[key].length" [key]="key" [data]="item[key]"></app-treenodes>
-  </li>
-</ul>
