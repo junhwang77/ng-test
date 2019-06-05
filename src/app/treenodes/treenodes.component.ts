@@ -12,7 +12,7 @@ import { AppComponent } from '../app.component'
                   (keyup.enter)="addItem(newItem.value, i)"
                   newItem.value=''
                 >
-                <button (click)="addItem(newItem.value, i)">Add Child</button>
+                <button (click)="addItem(newItem.value, i)">Breed Child</button>
                 <app-treenodes *ngIf="item[key].length" [id]="item[id]" [key]="key" [data]="item[key]"></app-treenodes>
               </li>
             </ul>`,
