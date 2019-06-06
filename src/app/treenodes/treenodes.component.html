@@ -1,0 +1,14 @@
+<ul *ngIf="items.length">
+    <li *ngFor="let item of items; index as i">
+      <div [@openClose]="item.isOpen ? 'open' : 'closed'" class="open-close-container">
+        <span (click)="toggle(i)">{{item.name}}</span>
+        <input #newItem
+          newItem.index="i"
+          (keyup.enter)="addItem(newItem.value, i)"
+          newItem.value=''
+        >
+        <button (click)="addItem(newItem.value, i)">Breed Child</button>
+        <app-treenodes *ngIf="item[key].length" [id]="item[id]" [key]="key" [data]="item[key]"></app-treenodes>
+      </div>
+    </li>
+  </ul>

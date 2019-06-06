@@ -4,20 +4,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-treenodes',
-  template: `<ul *ngIf="items.length">
-              <li *ngFor="let item of items; index as i">
-                <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
-                  <span (click)="toggle()">{{item.name}}</span>
-                  <input #newItem
-                    newItem.index="i"
-                    (keyup.enter)="addItem(newItem.value, i)"
-                    newItem.value=''
-                  >
-                  <button (click)="addItem(newItem.value, i)">Breed Child</button>
-                  <app-treenodes *ngIf="item[key].length" [id]="item[id]" [key]="key" [data]="item[key]"></app-treenodes>
-                </div>
-              </li>
-            </ul>`,
+  templateUrl: './treenodes.component.html',
   styleUrls: ['./treenodes.component.css'],
   animations: [
     trigger('openClose', [
@@ -47,11 +34,14 @@ export class TreenodesComponent {
   @Input('key') key: string;
   @Input('index') index: number;
 
-  isOpen = true;
+  isOpen = true
 
-  toggle() {    
-    this.isOpen = !this.isOpen
-    console.log(this.items)
+  toggle(index:number) {
+    interface LooseObject {
+      [key: string]: any
+    }
+    var eachObj:LooseObject = this.items[index]
+    eachObj.isOpen = !eachObj.isOpen
   }
 
   addItem(value: string, index: number) {
@@ -64,7 +54,8 @@ export class TreenodesComponent {
       var newObj = {
         index: index,
         name: value,
-        categories: []
+        categories: [],
+        isOpen: true
       }
       prevObj.categories.push(newObj)
     }
