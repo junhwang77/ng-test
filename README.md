@@ -1,7 +1,7 @@
 # NgTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1. 
-### Run `npm install` to install all the packages needed.
+##### Run `npm install` to install all the packages needed.
 
 ## Development server
 
