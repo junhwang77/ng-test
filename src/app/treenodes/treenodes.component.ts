@@ -10,12 +10,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     trigger('openClose', [
       state('open', style({
         height: 'auto',
-        backgroundColor: 'black'
       })),
       
       state('closed', style({
           height: '19px',
-          backgroundColor: 'grey'
+          color: 'red'
       })),
       
       transition('open => closed', [

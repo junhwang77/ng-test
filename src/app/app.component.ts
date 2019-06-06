@@ -11,7 +11,7 @@ export class AppComponent {
   key: string = 'categories';
   data: Array<Object> = [
     {
-      name: "Alien Queen",
+      name: "Parent",
       categories: [],
       isOpen: true
     }
